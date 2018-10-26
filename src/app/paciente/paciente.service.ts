@@ -47,15 +47,10 @@ export class PacienteService implements OnInit {
     return this.apiService.delete('pacientes/', id);
   }
 
-  // // Simulate PUT /books/:id
-  // update(newPaciente: Paciente): Paciente {
-  //   const oldPaciente = this.getById(newPaciente.id);
-  //   if (!oldPaciente) {
-  //     return;
-  //   }
-  //   Object.assign(oldPaciente, newPaciente);
-  //   return oldPaciente;
-  // }
+  // Simulate PUT /books/:id
+  update(newPaciente: Paciente, id: number) {
+    return this.apiService.put('pacientes/' + id, newPaciente);
+  }
 
   // Simulate GET /books
   getAll(): any {

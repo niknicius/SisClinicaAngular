@@ -1,3 +1,14 @@
-<p>
-  edit-paciente works!
-</p>
+<h1>Editing Paciente</h1>
+
+<form *ngIf="paciente" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div>
+    <label for="paciente_nome">Name</label> <br>
+    <input type="text" id="paciente_name" name="nome" [ngModel]="paciente.nome"> <br>
+  </div>
+
+
+  <input type="submit" id="edit_paciente_button" value="Update Paciente">
+</form>
+
+<a href="#" (click)="show()">Show</a>
+<a href="#" (click)="back()">Back</a>

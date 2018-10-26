@@ -7,6 +7,9 @@ import { RequestOptions, Headers, RequestMethod, RequestOptionsArgs } from '@ang
 export class ApiService {
 
   url: string = 'http://localhost:8080/';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
 
   constructor(private http: HttpClient) {
   }
@@ -16,11 +19,13 @@ export class ApiService {
   }
 
   post(endpoint: any, body: any){
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    }
+
     console.log(body);
-    return this.http.post(this.url + endpoint, body, httpOptions);
+    return this.http.post(this.url + endpoint, body, this.httpOptions);
+  }
+
+  put(endpoint: any, body: any): Observable<any>{
+    return this.http.put(this.url + endpoint, body, this.httpOptions);
   }
 
   get(endpoint: any): Observable<any>{
@@ -33,11 +38,7 @@ export class ApiService {
 
   delete(endpoint: any, id: any): any{
 
-    const httpOptions = {
-      headersa: new HttpHeaders({ 'Content-Type': 'application/json' })
-    }
-
-    const url = this.http.delete(this.url + endpoint + id, {headers: httpOptions[0]}).subscribe((result) => {
+    const url = this.http.delete(this.url + endpoint + id, {headers: this.httpOptions[0]}).subscribe((result) => {
       console.log(result);
     });
     return url;
