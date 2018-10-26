@@ -1,32 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 import { Paciente } from './paciente';
 import { AppService } from '../app.service';
 import { ApiService } from '../api.service';
 import { RequestOptions, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class PacienteService {
+export class PacienteService implements OnInit {
 
   // Placeholder for last id so we can simulate
   // automatic incrementing of id's
-  lastId = 0;
 
-  // Placeholder for book's
-  pacientes: Array<any>;
-
-  pacienteJ: any = {
-    nome: 'a'
-  }
 
   constructor(private appService: AppService, private apiService: ApiService) {}
 
   ngOnInit() {
-    console.log('as');
-    this.apiService.getAll().subscribe(data => {
-      this.pacientes = data;
-    });
+
   }
 
   // Simulate POST /books
@@ -34,8 +25,14 @@ export class PacienteService {
     // if (!paciente.id) {
     //   paciente.id = ++this.lastId;
     // }
-    
-    return this.apiService.apiPost(pacientej);
+
+    return this.apiService.post('pacientes', pacientej);
+  }
+
+  getById(id: any): Observable<any>{
+
+    return this.apiService.getById('pacientes',id);
+
   }
 
   private handleError(error: any): Promise<Array<any>> {
@@ -61,11 +58,8 @@ export class PacienteService {
   // }
 
   // Simulate GET /books
-  getAll(): Paciente[] {
-    this.apiService.getAll().subscribe(data => {
-      this.pacientes = data; });
-      console.log(this.pacientes);
-    return this.pacientes;
+  getAll(): any {
+    return this.apiService.getAll();
   }
 
   // // Simulate GET /books/:id

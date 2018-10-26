@@ -11,10 +11,9 @@ import { Paciente } from '../paciente';
   templateUrl: './show-paciente.component.html',
   styleUrls: ['./show-paciente.component.css']
 })
-export class ShowPacienteComponent{
+export class ShowPacienteComponent implements OnInit{
 
-  public paciente: Paciente;
-  public pacientes: any[];
+  public paciente: any = {};
 
   constructor(
     private router: Router,
@@ -22,23 +21,18 @@ export class ShowPacienteComponent{
     private pacienteService: PacienteService) { }
 
   ngOnInit() {
-    this.pacientes = this.pacienteService.getAll();
-    console.log(this.pacientes.length);
-  }
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      if (id) {
+        this.pacienteService.getById(id).subscribe((paciente: any) => {
+          if (paciente) {
+            this.paciente = paciente;
+          } else {
+            console.log(`Car with id '${id}' not found, returning to list`);
+          }
+        });
+      };
+  });
 
-  // loadPaciente(id: number): Promise<Paciente> {
-  //   return new Promise( (resolve) => resolve(this.pacienteService.getById(id)) );
-  // }
-
-  back() {
-    this.router.navigate(['/pacientes']);
-    this.pacienteService.clearMessage();
-    return false;
-  }
-
-  // edit() {
-  //   this.pacienteService.clearMessage();
-  //   this.router.navigate(['/pacientes', this.paciente.id, 'edit']);
-  //   return false;
-  // }
+}
 }

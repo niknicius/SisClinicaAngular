@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -11,7 +11,7 @@ import { ApiService } from 'app/api.service';
   templateUrl: './list-pacientes.component.html',
   styleUrls: ['./list-pacientes.component.css']
 })
-export class ListPacientesComponent {
+export class ListPacientesComponent implements OnInit {
 
   message: string;
   pacientes: Array<any>;
@@ -20,15 +20,17 @@ export class ListPacientesComponent {
     private router: Router,
     private service: PacienteService,
     private api: ApiService) {
-
-      this.getPacientes();
-      
   }
 
+  ngOnInit(){
 
-  getPacientes(): Paciente[] {
-    //console.log(this.service.getAll().length);
-    return this.service.getAll();
+    this.service.getAll().subscribe(data => {
+      this.pacientes = data;});
+
+  }
+
+  getPacientes() {
+    this.pacientes = this.service.getAll();
   }
 
   show(id) {
