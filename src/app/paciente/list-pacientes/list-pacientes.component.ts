@@ -45,12 +45,12 @@ export class ListPacientesComponent implements OnInit {
     return false;
   }
 
-  // destroy(id) {
-  //   if (confirm('Are you sure?')) {
-  //     this.service.delete(+id);
-  //     this.service.changeMessage(`Book was successfully destroyed.`);
-  //   }
-  //   return false;
-  // }
+  destroy(id) {
+    if (confirm('Tem certeza?')) {
+      console.log(this.service.delete(+id));
+      this.service.changeMessage('Paciente foi deletado');
+    }
+    return false;
+  }
 
 }

@@ -14,8 +14,10 @@
       <td>{{paciente.id}}</td>
       <td>{{paciente.nome}}</td>
       <td><a href="#" (click)="show(paciente.id)">Show</a></td>
+      <td><a href="#" (click)="edit(paciente.id)">Edit</a></td>
+      <td><a href="#" (click)="destroy(paciente.id)">Deletar</a></td>
     </tr>
   </tbody>
 </table>
 
-<a [routerLink]="['/pacientes', 'new']">New Book</a>
+<a [routerLink]="['/pacientes', 'new']">Novo Paciente</a>

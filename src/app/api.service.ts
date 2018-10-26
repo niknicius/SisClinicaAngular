@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { RequestOptions, Headers } from '@angular/http';
+import { Observable} from 'rxjs/Observable';
+import { RequestOptions, Headers, RequestMethod, RequestOptionsArgs } from '@angular/http';
 
 @Injectable()
 export class ApiService {
 
-  url: string = '//localhost:8080/';
+  url: string = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {
   }
@@ -29,5 +29,17 @@ export class ApiService {
 
   getById(endpoint: any, id: any): Observable<any>{
     return this.http.get(this.url + endpoint + '/' + id);
+  }
+
+  delete(endpoint: any, id: any): any{
+
+    const httpOptions = {
+      headersa: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }
+
+    const url = this.http.delete(this.url + endpoint + id, {headers: httpOptions[0]}).subscribe((result) => {
+      console.log(result);
+    });
+    return url;
   }
 }

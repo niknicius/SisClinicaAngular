@@ -28,7 +28,7 @@ export class ShowPacienteComponent implements OnInit{
           if (paciente) {
             this.paciente = paciente;
           } else {
-            console.log(`Car with id '${id}' not found, returning to list`);
+            console.log(`Paciente with id '${id}' not found, returning to list`);
           }
         });
       };

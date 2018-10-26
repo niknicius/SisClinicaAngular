@@ -41,11 +41,11 @@ export class PacienteService implements OnInit {
     }
 
 
-  // // Simulate DELETE /books/:id
-  // delete(id: number) {
-  //   this.pacientes = this.pacientes
-  //     .filter(paciente => paciente.id !== id);
-  // }
+  // Simulate DELETE /books/:id
+  delete(id: number): any {
+    console.log('delete service');
+    return this.apiService.delete('pacientes/', id);
+  }
 
   // // Simulate PUT /books/:id
   // update(newPaciente: Paciente): Paciente {
