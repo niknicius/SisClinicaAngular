@@ -1,0 +1,21 @@
+<h1>Pacientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th id="nameHeader">ID</th>
+      <th id="authorHeader">Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let paciente of pacientes">
+      <td>{{paciente.id}}</td>
+      <td>{{paciente.nome}}</td>
+      <td><a href="#" (click)="show(paciente.id)">Show</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<a [routerLink]="['/pacientes', 'new']">New Book</a>

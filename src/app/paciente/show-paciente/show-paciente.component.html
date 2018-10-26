@@ -1,0 +1,8 @@
+<div id="showPanel" *ngIf="paciente">
+  <p>
+    <strong>Name:</strong>
+    {{paciente.nome}}
+  </p>
+
+  <a href="#" (click)="edit()">Edit</a> | <a href="#" (click)="back()">Back</a>
+</div>

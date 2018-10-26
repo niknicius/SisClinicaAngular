@@ -1,0 +1,45 @@
+<h1>New Paciente</h1>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div>
+    <label for="paciente_name">Nome</label> <br>
+    <input type="text" id="paciente_nome" name="nome" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">Raça</label> <br>
+    <input type="text" id="paciente_raca" name="raca" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">CPF</label> <br>
+    <input type="text" id="paciente_cpf" name="cpf" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">RG</label> <br>
+    <input type="text" id="paciente_rg" name="rg" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">Sexo</label> <br>
+    <input type="text" id="paciente_sexo" name="sexo" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">Nacionalidade</label> <br>
+    <input type="text" id="paciente_nacionalidadde" name="nacionalidade" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">CEP</label> <br>
+    <input type="text" id="paciente_cep" name="cep" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">UF</label> <br>
+    <input type="text" id="paciente_uf" name="uf" ngModel> <br>
+  </div>
+  <div>
+    <label for="paciente_name">Tipo Consulta</label> <br>
+    <input type="text" id="paciente_tipoConsulta" name="tipoConsulta" ngModel> <br>
+  </div>
+  
+
+  <input type="submit" id="create_paciente_button" value="Create Paciente">
+</form>
+
+<a [routerLink]="['/pacientes']">Voltar</a>
