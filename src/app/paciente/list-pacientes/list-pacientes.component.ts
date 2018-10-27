@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { PacienteService } from '../paciente.service';
@@ -11,24 +11,32 @@ import { ApiService } from 'app/api.service';
   templateUrl: './list-pacientes.component.html',
   styleUrls: ['./list-pacientes.component.css']
 })
-export class ListPacientesComponent {
+export class ListPacientesComponent implements OnInit {
 
   message: string;
-  pacientes: Array<any>;
+  pacientes: Array<any> = [];
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private service: PacienteService,
     private api: ApiService) {
-
-      this.getPacientes();
-      
   }
 
+  ngOnInit(){
 
-  getPacientes(): Paciente[] {
-    //console.log(this.service.getAll().length);
-    return this.service.getAll();
+    this.service.getAll().subscribe(data => {
+      this.pacientes = data;});
+
+  }
+
+  getPacientes() {
+    this.pacientes = this.service.getAll();
+  }
+
+  reload(){
+    alert('Apagado com sucesso!');
+    window.location.reload();
   }
 
   show(id) {
@@ -39,16 +47,17 @@ export class ListPacientesComponent {
 
   edit(id) {
     this.service.clearMessage();
-    this.router.navigate(['/pacientes', id, 'edit']);
+    this.router.navigate(['/pacientes/edit/', id]);
     return false;
   }
 
-  // destroy(id) {
-  //   if (confirm('Are you sure?')) {
-  //     this.service.delete(+id);
-  //     this.service.changeMessage(`Book was successfully destroyed.`);
-  //   }
-  //   return false;
-  // }
+  destroy(id) {
+    if (confirm('Tem certeza?')) {
+      this.service.delete(+id);
+      this.service.changeMessage('Paciente foi deletado');
+      this.reload();
+    }
+    return false;
+  }
 
 }

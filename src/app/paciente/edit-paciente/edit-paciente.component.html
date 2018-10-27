@@ -1,0 +1,76 @@
+<div class="container-fluid"><h1>Edit Paciente</h1>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <div class="form-group">
+          <label for="paciente_nome">Nome</label>
+          <input type="text" class="form-control" id="paciente_nome" name="nome" placeholder="Nome completo" [ngModel]="paciente.nome">
+      </div>
+      <div class="form-group">
+          <label for="paciente_raca">Raça</label>
+          <input type="text" class="form-control" id="paciente_raca" name="raca" placeholder="Raca" [ngModel]="paciente.raca">
+      </div>
+      <div class="form-group">
+          <label for="paciente_dataNascimento">Data de Nascimentp</label>
+          <input type="text" class="form-control" id="paciente_dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA" [ngModel]="paciente.dataNascimento">
+      </div>
+      <div class="form-group">
+          <label for="paciente_cpf">CPF</label>
+          <input type="text" class="form-control" id="paciente_cpf" name="cpf" placeholder="CPF" [ngModel]="paciente.cpf">
+      </div>
+      <div class="form-group">
+          <label for="paciente_rg">RG</label>
+          <input type="text" class="form-control" id="paciente_rg" name="rg" placeholder="RG" [ngModel]="paciente.rg">
+      </div>
+      <div class="form-group">
+          <label for="paciente_nome">Sexo</label>
+          <select class="form-control" name="sexo" id="paciente_sexo" ngModel>
+            <option *ngIf="sexo == 0; else else1" selected="selected" value="">Selecione</option>
+            <option *ngIf="sexo == 1; else else2" selected="selected" value="masculino">Masculino</option>
+            <option *ngIf="sexo == 2; else else3" selected="selected" value="feminino">Feminino</option>
+            <ng-template #else1>
+                <option value="">Selecione</option>
+            </ng-template>
+            <ng-template #else2>
+                <option value="masculino">Masculino</option>
+            </ng-template>
+            <ng-template #else3>
+                <option value="feminino">Feminino</option>
+            </ng-template>
+              
+          </select>
+      </div>
+      <div class="form-group">
+          <label for="paciente_nacionalidadde">Nacionalidade</label>
+          <input type="text" class="form-control" id="paciente_nacionalidade" name="nacionalidade" placeholder="Nacionalidade" [ngModel]="paciente.nacionalidade">
+      </div>
+      <div class="form-group">
+          <label for="paciente_cep">CEP</label>
+          <input type="text" class="form-control" id="paciente_cep" name="cep" placeholder="CEP" [ngModel]="paciente.cep">
+      </div>
+      <div class="form-group">
+          <label for="paciente_uf">UF</label>
+          <input type="text" class="form-control" id="paciente_uf" name="uf" placeholder="uf" [ngModel]="paciente.uf">
+      </div>
+      <div class="form-group">
+          <label for="paciente_nome">Tipo Consulta</label>
+          <select class="form-control" id="paciente_tipoConsulta" name="tipoConsulta" ngModel>
+            <option *ngIf="tipoConsulta == 0; else elseT1" selected value="">Selecione</option>
+            <option *ngIf="tipoConsulta == 1; else elseT2" selected value="normal">Normal</option>
+            <option *ngIf="tipoConsulta == 2; else elseT3" selected value="retorno">Retorno</option>
+            <ng-template #elseT1>
+                <option value="">Selecione</option>
+            </ng-template>
+            <ng-template #elseT2>
+                <option value="normal">Normal</option>
+            </ng-template>
+            <ng-template #elseT3>
+                <option value="retorno">Retorno</option>
+            </ng-template>
+          </select>
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Atualizar</button>
+  </form>
+  
+  <a [routerLink]="['/pacientes']">Voltar</a>
+  </div>

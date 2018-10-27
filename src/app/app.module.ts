@@ -15,6 +15,8 @@ import { PacienteService } from './paciente/paciente.service';
 import { ShowPacienteComponent } from './paciente/show-paciente/show-paciente.component';
 import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EditPacienteComponent } from './paciente/edit-paciente/edit-paciente.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ListPacientesComponent,
     NewPacienteComponent,
-    ShowPacienteComponent
+    ShowPacienteComponent,
+    EditPacienteComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

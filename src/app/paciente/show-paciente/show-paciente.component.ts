@@ -11,10 +11,10 @@ import { Paciente } from '../paciente';
   templateUrl: './show-paciente.component.html',
   styleUrls: ['./show-paciente.component.css']
 })
-export class ShowPacienteComponent{
+export class ShowPacienteComponent implements OnInit{
 
-  public paciente: Paciente;
-  public pacientes: any[];
+  public paciente: any = {};
+  public id: number;
 
   constructor(
     private router: Router,
@@ -22,23 +22,24 @@ export class ShowPacienteComponent{
     private pacienteService: PacienteService) { }
 
   ngOnInit() {
-    this.pacientes = this.pacienteService.getAll();
-    console.log(this.pacientes.length);
-  }
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      if (id) {
+        this.pacienteService.getById(id).subscribe((paciente: any) => {
+          if (paciente) {
+            this.paciente = paciente;
+            this.id = id;
+          } else {
+            alert('Paciente não encontrado!');
+            this.router.navigate(['/pacientes']);
+          }
+        });
+      };
+  });
+}
+edit(){
+  this.router.navigate(['/pacientes/edit/', this.id]);
+  return false;
+}
 
-  // loadPaciente(id: number): Promise<Paciente> {
-  //   return new Promise( (resolve) => resolve(this.pacienteService.getById(id)) );
-  // }
-
-  back() {
-    this.router.navigate(['/pacientes']);
-    this.pacienteService.clearMessage();
-    return false;
-  }
-
-  // edit() {
-  //   this.pacienteService.clearMessage();
-  //   this.router.navigate(['/pacientes', this.paciente.id, 'edit']);
-  //   return false;
-  // }
 }

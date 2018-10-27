@@ -19,10 +19,16 @@ export class NewPacienteComponent implements OnInit{
   ngOnInit(){};
 
   onSubmit(form: any) {
-    
-    this.pacienteService.add(JSON.stringify(new Paciente(form.nome,form.raca,form.cpf,form.rg,form.sexo,form.nacionalidade,form.cep,form.uf,form.tipoConsulta))).subscribe((result) => {
+
+    this.pacienteService.add(JSON.stringify(
+      new Paciente(form.nome, form.raca, form.dataNascimento,
+        form.cpf, form.rg, form.sexo, form.nacionalidade, form.cep, form.uf, form.tipoConsulta)))
+      .subscribe((result) => {
       console.log(result);
-    });
+      alert('Paciente cadastrado!');
+    this.router.navigate(['/pacientes/',result['id']]);
+    },
+    error => {alert('Um erro aconteceu, tente novamente');})
 
   }
 
