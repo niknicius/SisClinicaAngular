@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { PacienteService } from '../paciente.service';
@@ -14,10 +14,11 @@ import { ApiService } from 'app/api.service';
 export class ListPacientesComponent implements OnInit {
 
   message: string;
-  pacientes: Array<any>;
+  pacientes: Array<any> = [];
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private service: PacienteService,
     private api: ApiService) {
   }
@@ -33,6 +34,11 @@ export class ListPacientesComponent implements OnInit {
     this.pacientes = this.service.getAll();
   }
 
+  reload(){
+    alert('Apagado com sucesso!');
+    window.location.reload();
+  }
+
   show(id) {
     this.service.clearMessage();
     this.router.navigate(['/pacientes', id]);
@@ -41,14 +47,15 @@ export class ListPacientesComponent implements OnInit {
 
   edit(id) {
     this.service.clearMessage();
-    this.router.navigate(['/pacientes', id, 'edit']);
+    this.router.navigate(['/pacientes/edit/', id]);
     return false;
   }
 
   destroy(id) {
     if (confirm('Tem certeza?')) {
-      console.log(this.service.delete(+id));
+      this.service.delete(+id);
       this.service.changeMessage('Paciente foi deletado');
+      this.reload();
     }
     return false;
   }

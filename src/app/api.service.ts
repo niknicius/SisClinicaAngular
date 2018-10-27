@@ -40,7 +40,7 @@ export class ApiService {
 
     const url = this.http.delete(this.url + endpoint + id, {headers: this.httpOptions[0]}).subscribe((result) => {
       console.log(result);
-    });
+    }, error => console.log('oops', error));
     return url;
   }
 }

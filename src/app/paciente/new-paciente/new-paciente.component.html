@@ -1,45 +1,86 @@
-<h1>New Paciente</h1>
+<div class="container-fluid"><h1>New Paciente</h1>
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
-  <div>
-    <label for="paciente_name">Nome</label> <br>
-    <input type="text" id="paciente_nome" name="nome" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">Raça</label> <br>
-    <input type="text" id="paciente_raca" name="raca" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">CPF</label> <br>
-    <input type="text" id="paciente_cpf" name="cpf" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">RG</label> <br>
-    <input type="text" id="paciente_rg" name="rg" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">Sexo</label> <br>
-    <input type="text" id="paciente_sexo" name="sexo" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">Nacionalidade</label> <br>
-    <input type="text" id="paciente_nacionalidadde" name="nacionalidade" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">CEP</label> <br>
-    <input type="text" id="paciente_cep" name="cep" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">UF</label> <br>
-    <input type="text" id="paciente_uf" name="uf" ngModel> <br>
-  </div>
-  <div>
-    <label for="paciente_name">Tipo Consulta</label> <br>
-    <input type="text" id="paciente_tipoConsulta" name="tipoConsulta" ngModel> <br>
-  </div>
+    <div class="form-group">
+        <label for="paciente_nome">Nome</label>
+        <input type="text" class="form-control" id="paciente_nome" name="nome" placeholder="Nome completo" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_raca">Raça</label>
+        <input type="text" class="form-control" id="paciente_raca" name="raca" placeholder="Raca" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_dataNascimento">Data de Nascimentp</label>
+        <input type="text" class="form-control" id="paciente_dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_cpf">CPF</label>
+        <input type="text" class="form-control" id="paciente_cpf" name="cpf" placeholder="CPF" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_rg">RG</label>
+        <input type="text" class="form-control" id="paciente_rg" name="rg" placeholder="RG" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_nome">Sexo</label>
+        <select class="form-control" name="sexo" id="paciente_sexo" ngModel>
+          <option selected="selected" value="">Selecione</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="paciente_nacionalidadde">Nacionalidade</label>
+        <input type="text" class="form-control" id="paciente_nacionalidade" name="nacionalidade" placeholder="Nacionalidade" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_cep">CEP</label>
+        <input type="text" class="form-control" id="paciente_cep" name="cep" placeholder="CEP" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="paciente_uf">UF</label>
+        <select class="form-control" name="uf" id="paciente_uf" ngModel>
+            <option selected="selected" value="">Selecione</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AM">AM</option>
+            <option value="AP">AP</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MG">MG</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="PR">PR</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SE">SE</option>
+            <option value="SP">SP</option>
+            <option value="TO">TO</option>
+           </select>
+    </div>
+    <div class="form-group">
+        <label for="paciente_nome">Tipo Consulta</label>
+        <select class="form-control" id="paciente_tipoConsulta" name="tipoConsulta" ngModel>
+          <option selected value="">Selecione</option>
+          <option value="normal">Normal</option>
+          <option value="retorno">Retorno</option>
+        </select>
+    </div>
   
-
-  <input type="submit" id="create_paciente_button" value="Create Paciente">
+    <button type="submit" class="btn btn-primary">Adicionar</button>
 </form>
 
 <a [routerLink]="['/pacientes']">Voltar</a>
+</div>

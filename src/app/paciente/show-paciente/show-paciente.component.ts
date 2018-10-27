@@ -14,6 +14,7 @@ import { Paciente } from '../paciente';
 export class ShowPacienteComponent implements OnInit{
 
   public paciente: any = {};
+  public id: number;
 
   constructor(
     private router: Router,
@@ -27,12 +28,18 @@ export class ShowPacienteComponent implements OnInit{
         this.pacienteService.getById(id).subscribe((paciente: any) => {
           if (paciente) {
             this.paciente = paciente;
+            this.id = id;
           } else {
-            console.log(`Paciente with id '${id}' not found, returning to list`);
+            alert('Paciente não encontrado!');
+            this.router.navigate(['/pacientes']);
           }
         });
       };
   });
-
 }
+edit(){
+  this.router.navigate(['/pacientes/edit/', this.id]);
+  return false;
+}
+
 }

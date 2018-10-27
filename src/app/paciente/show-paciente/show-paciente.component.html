@@ -1,8 +1,38 @@
-<div id="showPanel" *ngIf="paciente">
+<div class="container-fluid"><div id="showPanel" *ngIf="paciente">
+  <h1>Dados de {{paciente.nome}}</h1>
   <p>
-    <strong>Name:</strong>
-    {{paciente.nome}}
+    <strong>Raça:</strong>
+    {{paciente.raca}}
+  </p>
+  <p>
+  <strong>Data de Nascimento:</strong>
+    {{paciente.dataNascimento}}
+  </p>
+  <p>
+  <strong>CPF:</strong>
+    {{paciente.cpf}}
+  </p>
+  <p>
+  <strong>RG:</strong>
+    {{paciente.rg}}
+  </p>
+  <p>
+  <strong>Sexo:</strong>
+    {{paciente.sexo}}
+  </p>
+  <p>
+  <strong>Nacionalidade:</strong>
+    {{paciente.nacionalidade}}
+  </p>
+   <p>
+  <strong>CEP:</strong>
+    {{paciente.cep}}
+  </p>
+  <p>
+  <strong>UF:</strong>
+    {{paciente.uf}}
   </p>
 
-  <a href="#" (click)="edit()">Edit</a> | <a href="#" (click)="back()">Back</a>
+  <a href="#" (click)="edit()">Editar</a> | <a href="#" (click)="back()">Voltar</a>
+</div>
 </div>

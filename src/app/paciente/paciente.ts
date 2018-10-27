@@ -4,6 +4,7 @@ export class Paciente {
     constructor(
         public nome: string,
         public raca: string,
+        public dataNascimento: string,
         public cpf: string,
         public rg: string,
         public sexo: string,
