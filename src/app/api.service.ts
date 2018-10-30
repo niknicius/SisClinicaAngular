@@ -14,8 +14,8 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/pacientes');
+  getAll(endpoint: any): Observable<any> {
+    return this.http.get(this.url + endpoint);
   }
 
   post(endpoint: any, body: any){
