@@ -10,13 +10,13 @@ import { ApiService } from 'app/api.service';
   templateUrl: './new-paciente.component.html',
   styleUrls: ['./new-paciente.component.css']
 })
-export class NewPacienteComponent implements OnInit{
+export class NewPacienteComponent implements OnInit {
+  id = 0;
 
   constructor(private router: Router, private pacienteService: PacienteService, private apiService: ApiService) {}
 
-  id: number = 0;
 
-  ngOnInit(){};
+  ngOnInit() {};
 
   onSubmit(form: any) {
 
@@ -26,12 +26,12 @@ export class NewPacienteComponent implements OnInit{
       .subscribe((result) => {
       console.log(result);
       alert('Paciente cadastrado!');
-    this.router.navigate(['/pacientes/',result['id']]);
+    this.router.navigate(['/pacientes/', result['id']]);
     },
     error => {
       alert(error.error.message);
       console.log(error.error.message);
-    })
+    });
 
   }
 
