@@ -54,7 +54,7 @@ export class PacienteService implements OnInit {
 
   // Simulate GET /books
   getAll(): any {
-    return this.apiService.getAll();
+    return this.apiService.getAll('pacientes');
   }
 
   // // Simulate GET /books/:id

@@ -1,0 +1,37 @@
+<div class="container-fluid"><h1>New Medico</h1>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <div class="form-group">
+          <label for="medico_nome">Nome</label>
+          <input type="text" class="form-control" id="medico_nome" name="nome" placeholder="Nome completo" ngModel>
+      </div>
+      <div class="form-group">
+          <label for="medico_especialidade">Especialidade</label>
+          <input type="text" class="form-control" id="medico_especialidade" name="especialidade" placeholder="Especialidade" ngModel>
+      </div>
+      <div class="form-group">
+          <label for="medico_crm">CRM</label>
+          <input type="text" class="form-control" id="medico_crm" name="crm" placeholder="Número do CRM" ngModel>
+      </div>
+      <div class="form-group">
+          <label for="medico_cpf">CPF</label>
+          <input type="text" class="form-control" id="medico_cpf" name="cpf" placeholder="CPF" ngModel>
+      </div>
+      <div class="form-group">
+        <label for="medico_salaDeAtendimento">Sala de Atendimento</label>
+        <input type="text" class="form-control" id="medico_salaDeAtendimento" name="salaDeAtendimento" placeholder="Sala De Atendimento" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="medico_salario">Salário</label>
+      <input type="text" class="form-control" id="medico_salario" name="salario" placeholder="Salario do Medico" ngModel>
+  </div>
+  <div class="form-group">
+    <label for="medico_plantao">Plantão</label>
+    <input type="text" class="form-control" id="medico_platao" name="plantao" placeholder=" " ngModel>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Adicionar</button>
+
+</form>
+
+<a [routerLink]="['/medicos']">Voltar</a>

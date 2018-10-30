@@ -17,6 +17,11 @@ import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EditPacienteComponent } from './paciente/edit-paciente/edit-paciente.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListMedicosComponent } from './medicos/list-medicos/list-medicos.component';
+import { ShowMedicoComponent } from './medicos/show-medico/show-medico.component';
+import { NewMedicoComponent } from './medicos/new-medico/new-medico.component';
+import { EditMedicoComponent } from './medicos/edit-medico/edit-medico.component';
+import { MedicoService } from './medicos/medico.service';
 
 
 @NgModule({
@@ -26,7 +31,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NewPacienteComponent,
     ShowPacienteComponent,
     EditPacienteComponent,
-    DashboardComponent
+    DashboardComponent,
+    ListMedicosComponent,
+    ShowMedicoComponent,
+    NewMedicoComponent,
+    EditMedicoComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   providers: [
     AppService,
     PacienteService,
-    ApiService
+    ApiService,
+    MedicoService
   ],
   bootstrap: [AppComponent]
 })

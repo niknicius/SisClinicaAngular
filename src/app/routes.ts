@@ -5,6 +5,10 @@ import { NewPacienteComponent } from './paciente/new-paciente/new-paciente.compo
 import { ShowPacienteComponent } from './paciente/show-paciente/show-paciente.component';
 import { EditPacienteComponent } from './paciente/edit-paciente/edit-paciente.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListMedicosComponent } from './medicos/list-medicos/list-medicos.component';
+import { NewMedicoComponent } from './medicos/new-medico/new-medico.component';
+import { ShowMedicoComponent } from './medicos/show-medico/show-medico.component';
+import { EditMedicoComponent } from './medicos/edit-medico/edit-medico.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
@@ -12,6 +16,10 @@ export const routes: Routes = [
   { path: 'pacientes/new', component: NewPacienteComponent},
   { path: 'pacientes/:id', component: ShowPacienteComponent},
   { path: 'pacientes/edit/:id', component: EditPacienteComponent},
-  { path: 'dashboard', component: DashboardComponent}
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'medicos', component: ListMedicosComponent },
+  { path: 'medicos/new', component: NewMedicoComponent },
+  { path: 'medicos/:id', component: ShowMedicoComponent},
+  {path: 'medicos/edit/:id', component: EditMedicoComponent}
 
 ];
