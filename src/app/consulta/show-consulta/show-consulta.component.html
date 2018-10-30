@@ -1,0 +1,26 @@
+<div class="container-fluid"><div id="showPanel" *ngIf="consulta">
+  <h1>Dados da consulta de {{consulta.paciente.nome}}</h1>
+  <p>
+    <strong>Paciente:</strong>
+    {{consulta.paciente}}
+  </p>
+  <p>
+  <strong>Medico:</strong>
+    {{consulta.medico}}
+  </p>
+  <p>
+  <strong>Data da Consulta:</strong>
+    {{consulta.dataConsulta}
+  </p>
+  <p>
+  <strong>Data do Retorno:</strong>
+    {{consulta.dataRetorno}}
+  </p>
+  <p>
+  <strong>Status - true = a atender, false = concluido:</strong>
+    {{consulta.aberta}}
+  </p>
+  
+  <a href="#" (click)="edit()">Editar</a> | <a href="#" (click)="back()">Voltar</a>
+</div>
+</div>

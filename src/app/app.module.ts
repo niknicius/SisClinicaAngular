@@ -13,6 +13,7 @@ import { ListPacientesComponent } from './paciente/list-pacientes/list-pacientes
 import { NewPacienteComponent } from './paciente/new-paciente/new-paciente.component';
 import { PacienteService } from './paciente/paciente.service';
 import { ShowPacienteComponent } from './paciente/show-paciente/show-paciente.component';
+
 import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EditPacienteComponent } from './paciente/edit-paciente/edit-paciente.component';
@@ -23,6 +24,10 @@ import { ShowMedicoComponent } from './medicos/show-medico/show-medico.component
 import { NewMedicoComponent } from './medicos/new-medico/new-medico.component';
 import { EditMedicoComponent } from './medicos/edit-medico/edit-medico.component';
 import { MedicoService } from './medicos/medico.service';
+import { ListConsultasComponent } from './consulta/list-consultas/list-consultas.component';
+import { NewConsultaComponent } from './consulta/new-consulta/new-consulta.component';
+import { ShowConsultaComponent } from './consulta/show-consulta/show-consulta.component';
+import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.component';
 
 
 @NgModule({
@@ -36,7 +41,12 @@ import { MedicoService } from './medicos/medico.service';
     ListMedicosComponent,
     ShowMedicoComponent,
     NewMedicoComponent,
-    EditMedicoComponent
+    EditMedicoComponent,
+    ListConsultasComponent,
+    NewConsultaComponent,
+    ShowConsultaComponent,
+    EditConsultaComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

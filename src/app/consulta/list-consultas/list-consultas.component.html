@@ -1,0 +1,51 @@
+<div class="container-fluid"><h1>Pacientes <button href="#" [routerLink]="['/consultas', 'new']" type="button" class="btn btn-primary">
+    Adicionar
+  </button></h1>
+  <div id="notificationMessage" *ngIf="consultas.length == 0" class="alert alert-da" role="alert">
+      Lista de consultas vazia
+    </div>
+  <table *ngIf="consultas.length >= 1" class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Consulta</th>
+          <th scope="col">ID</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consulta of consulta">
+          <th scope="row">{{consulta.id}}</th>
+          <td>{{consulta.paciente.nome}}</td>
+          <td>{{consulta.medico.nome}}</td>
+          <td><div class="btn-group-sm" role="group" aria-label="Basic example">
+              <button type="button" href="#" (click)="show(consulta.id)" class="btn btn-secondary">Visualizar</button>
+              <button type="button" href="#" (click)="edit(consulta.id)" class="btn btn-secondary">Editar</button>
+              <button type="button" href="#" (click)="destroy(consulta.id)" class="btn btn-secondary">Deletar</button>
+            </div></td>
+        </tr>
+      </tbody>
+    </table>
+<!-- <table>
+  <thead>
+    <tr>
+      <th id="nameHeader">ID   </th>
+      <th id="authorHeader">Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let consulta of consulta">
+      <td>{{consulta.id}}</td>
+      <td>{{consulta.nome}}</td>
+      <td><div class="btn-group-sm" role="group" aria-label="Basic example">
+          <button type="button" href="#" (click)="show(consulta.id)" class="btn btn-secondary">Visualizar</button>
+          <button type="button" href="#" (click)="edit(consulta.id)" class="btn btn-secondary">Editar</button>
+          <button type="button" href="#" (click)="destroy(consulta.id)" class="btn btn-secondary">Deletar</button>
+        </div></td>
+    </tr>
+  </tbody>
+</table> -->
+
+</div>
