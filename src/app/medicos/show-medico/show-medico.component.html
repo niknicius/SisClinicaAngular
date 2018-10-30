@@ -1,0 +1,27 @@
+<div class="container-fluid"><div id="showPanel" *ngIf="medico">
+  <h1>Dados de {{medico.nome}}</h1>
+  <p>
+    <strong>Especialidade:</strong>
+    {{medico.especialidade}}
+  </p>
+  <p>
+  <strong>CPF:</strong>
+    {{medico.cpf}}
+  </p>
+  <p>
+  <strong>CRM:</strong>
+    {{medico.crm}}
+  </p>
+  <p>
+  <strong>salaDeAtendimento:</strong>
+    {{medico.salaDeAtendimento}}
+  </p>
+  <p>
+  <strong>Plantao:</strong>
+    {{medico.plantao}}
+  </p>
+   <p>
+
+  <a href="#" (click)="edit()">Editar</a> | <a href="#" (click)="back()">Voltar</a>
+</div>
+</div>
