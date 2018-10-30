@@ -17,6 +17,7 @@ import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EditPacienteComponent } from './paciente/edit-paciente/edit-paciente.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   providers: [
     AppService,
     PacienteService,
-    ApiService
+    ApiService,
+    {provide: APP_BASE_HREF, useValue: '/#!/'}
   ],
   bootstrap: [AppComponent]
 })

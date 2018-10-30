@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/']" >Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>
@@ -18,5 +18,6 @@
         {{message}}
       </div>
     </div>
-
+  <div class="row align-items-center justify-content-center" style="max-width:100%"><div class="col" style="color: white;max-width: 70%;background-color: rgba(0, 0, 0, 0.03);border-radius: 10px;">
 <router-outlet></router-outlet>
+</div></div>

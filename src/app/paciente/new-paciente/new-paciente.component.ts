@@ -28,7 +28,10 @@ export class NewPacienteComponent implements OnInit{
       alert('Paciente cadastrado!');
     this.router.navigate(['/pacientes/',result['id']]);
     },
-    error => {alert('Um erro aconteceu, tente novamente');})
+    error => {
+      alert(error.error.message);
+      console.log(error.error.message);
+    })
 
   }
 
