@@ -24,13 +24,11 @@
         </div>
         <div class="form-group">
             <label for="consulta_aberta">Status</label>
-            <select class="form-control" name="aberta" id="consulta_aberta" ngModel>
-                <option selected="selected" value="">Selecione</option>
-                <option value="Espera">Espera</option>
-                <option value="Concluida">Concluida</option>
-
+            <select class="form-control" id="consulta_aberta" name="status">
+                <option value=false>Não</option>
+                <option value=true>Sim</option>
             </select>
-        </div>
+        </div>  
 
         <button type="submit" class="btn btn-primary">Adicionar</button>
     </form>

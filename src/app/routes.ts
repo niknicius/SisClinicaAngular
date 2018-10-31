@@ -25,10 +25,10 @@ export const routes: Routes = [
   { path: 'medicos/new', component: NewMedicoComponent },
   { path: 'medicos/:id', component: ShowMedicoComponent},
   {path: 'medicos/edit/:id', component: EditMedicoComponent},
-  { path: 'consultas' , component: ListConsultasComponent},
-  { path: 'consultas/new', component: NewConsultaComponent},
-  { path: 'consultas/:id', component: ShowConsultaComponent},
-  { path: 'consultas/edit/:id', component: EditConsultaComponent},
+  { path: 'pacientes/:id/consultas' , component: ListConsultasComponent},
+  { path: 'pacientes/:id/consultas/new', component: NewConsultaComponent},
+  { path: 'pacientes/:id/consultas/:id', component: ShowConsultaComponent},
+  { path: 'pacientes/:id/consultas/edit/:id', component: EditConsultaComponent},
   { path: 'dashboard', component: DashboardComponent}
 
 ];

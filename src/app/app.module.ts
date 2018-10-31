@@ -28,6 +28,7 @@ import { ListConsultasComponent } from './consulta/list-consultas/list-consultas
 import { NewConsultaComponent } from './consulta/new-consulta/new-consulta.component';
 import { ShowConsultaComponent } from './consulta/show-consulta/show-consulta.component';
 import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.component';
+import { ConsultaService } from './consulta/consulta.service';
 
 
 @NgModule({
@@ -58,8 +59,8 @@ import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.co
   providers: [
     AppService,
     PacienteService,
+    ConsultaService,
     ApiService,
-    {provide: APP_BASE_HREF, useValue: '/#!/'},
     MedicoService
   ],
   bootstrap: [AppComponent]
