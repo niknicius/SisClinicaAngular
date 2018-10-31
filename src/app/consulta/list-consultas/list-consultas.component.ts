@@ -3,8 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 
 import { ConsultaService } from '../consulta.service';
-import { Consulta } from '../consulta';
 import { ApiService } from 'app/api.service';
+import { PacienteService } from 'app/paciente/paciente.service';
 
 @Component({
   selector: 'app-list-consultas',
@@ -15,18 +15,24 @@ export class ListConsultasComponent implements OnInit {
 
   message: string;
   consultas: Array<any> = [];
+  paciente: any;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private service: ConsultaService,
+    private pacienteService: PacienteService,
     private api: ApiService) {
   }
 
+  
   ngOnInit(){
 
     this.service.getAll().subscribe(dataConsulta => {
-      this.consultas = dataConsulta;});
+      this.consultas = dataConsulta;
+      console.log(dataConsulta);
+    });
+      
 
   }
 

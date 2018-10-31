@@ -21,17 +21,18 @@ export class ConsultaService implements OnInit {
   }
 
   // Simulate POST /books
-  add(consultak): any {
+  add(consulta): any {
     // if (!consulta.id) {
     //   consulta.id = ++this.lastId;
     // }
 
-    return this.apiService.post('consulta', consultak);
+
+    return this.apiService.post('consultas', consulta);
   }
 
   getById(id: any): Observable<any>{
 
-    return this.apiService.getById('consulta',id);
+    return this.apiService.getById('consultas',id);
 
   }
 
@@ -54,7 +55,8 @@ export class ConsultaService implements OnInit {
 
   // Simulate GET /books
   getAll(): any {
-    return this.apiService.getAll('consulta');
+
+    return this.apiService.getAll('consultas');
   }
 
   // // Simulate GET /books/:id

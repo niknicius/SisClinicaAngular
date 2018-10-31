@@ -3,25 +3,25 @@ import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { ShowBookComponent } from './show-book.component';
-import { NewBookComponent } from '../new-book/new-book.component';
-import { ListBooksComponent } from '../list-books/list-books.component';
+import { ShowPacienteComponent } from './show-paciente.component';
+import { NewPacienteComponent } from '../new-paciente/new-paciente.component';
+import { ListPacientesComponent } from '../list-pacientes/list-pacientes.component';
 import { routes } from '../../routes';
-import { BookService } from '../book.service';
-import { EditBookComponent } from '../edit-book/edit-book.component';
+import { PacienteService } from '../paciente.service';
+import { EditPacienteComponent } from '../edit-paciente/edit-paciente.component';
 import { AppService } from '../../app.service';
 
 describe('ShowBookComponent', () => {
-  let component: ShowBookComponent;
-  let fixture: ComponentFixture<ShowBookComponent>;
+  let component: ShowPacienteComponent;
+  let fixture: ComponentFixture<ShowPacienteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NewBookComponent,
-        ShowBookComponent,
-        ListBooksComponent,
-        EditBookComponent
+        NewPacienteComponent,
+        ShowPacienteComponent,
+        ListPacientesComponent,
+        EditPacienteComponent
       ],
       imports: [
         RouterModule.forRoot(routes),
@@ -30,14 +30,14 @@ describe('ShowBookComponent', () => {
       providers: [
         { provide: APP_BASE_HREF, useValue : '/' },
         AppService,
-        BookService
+        PacienteService
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowBookComponent);
+    fixture = TestBed.createComponent(ShowPacienteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

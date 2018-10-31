@@ -28,11 +28,12 @@ import { ListConsultasComponent } from './consulta/list-consultas/list-consultas
 import { NewConsultaComponent } from './consulta/new-consulta/new-consulta.component';
 import { ShowConsultaComponent } from './consulta/show-consulta/show-consulta.component';
 import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.component';
+import { ConsultaService } from './consulta/consulta.service';
+import { ExameService } from './exame/exame.service';
 import { EditExameComponent } from './exame/edit-exame/edit-exame.component';
 import { ShowExameComponent } from './exame/show-exame/show-exame.component';
 import { NewExameComponent } from './exame/new-exame/new-exame.component';
 import { ListExamesComponent } from './exame/list-exames/list-exames.component';
-import { ExameService } from './exame/exame.service';
 
 
 @NgModule({
@@ -67,10 +68,11 @@ import { ExameService } from './exame/exame.service';
   providers: [
     AppService,
     PacienteService,
+    ConsultaService,
     ExameService,
     ApiService,
-    {provide: APP_BASE_HREF, useValue: '/#!/'},
-    MedicoService
+    MedicoService,
+    ConsultaService
   ],
   bootstrap: [AppComponent]
 })

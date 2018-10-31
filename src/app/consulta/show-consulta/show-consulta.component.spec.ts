@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { ShowConsultaComponent } from './show-consulta.component';
 import { NewConsultaComponent } from '../new-consulta/new-consulta.component';
-import { ListConsultasComponent } from '../list-consulta/list-consulta.component';
+/* import { ListConsultasComponent } from '../list-consulta/list-consulta.component'; */
+import { ListConsultasComponent } from '../list-consultas/list-consultas.component';
 import { routes } from '../../routes';
 import { ConsultaService } from '../consulta.service';
 import { EditConsultaComponent } from '../edit-consulta/edit-consulta.component';
@@ -20,7 +21,6 @@ describe('ShowConsultaComponent', () => {
       declarations: [
         NewConsultaComponent,
         ShowConsultaComponent,
-        ListConsultasComponent,
         EditConsultaComponent
       ],
       imports: [
