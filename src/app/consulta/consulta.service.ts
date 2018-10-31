@@ -26,7 +26,7 @@ export class ConsultaService implements OnInit {
     //   consulta.id = ++this.lastId;
     // }
 
-    return this.apiService.post('consulta', consultak);
+    return this.apiService.post('consulta', consulta);
   }
 
   getById(id: any): Observable<any>{

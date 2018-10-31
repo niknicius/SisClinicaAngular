@@ -4,22 +4,22 @@ import {APP_BASE_HREF} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AppService } from './app.service';
-import { BookService } from './book/book.service';
+import { PacienteService } from './paciente/paciente.service';
 
 import { AppComponent } from './app.component';
 import { routes } from './routes';
-import { ListBooksComponent } from './book/list-books/list-books.component';
-import { NewBookComponent } from './book/new-book/new-book.component';
-import { EditBookComponent } from './book/edit-book/edit-book.component';
+import { ListPacientesComponent } from './paciente/list-pacientes/list-pacientes.component';
+import { NewPacienteComponent } from './paciente/new-paciente/new-paciente.component';
+import { EditPacienteComponent } from './paciente/edit-paciente/edit-paciente.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        ListBooksComponent,
-        NewBookComponent,
-        EditBookComponent
+        ListPacientesComponent,
+        NewPacienteComponent,
+        EditPacienteComponent
       ],
       imports: [
         RouterModule.forRoot(routes),
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue : '/' },
-        BookService,
+        PacienteService,
         AppService
       ]
     }).compileComponents();
