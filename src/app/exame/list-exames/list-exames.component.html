@@ -1,0 +1,29 @@
+<div class="container-fluid"><h1>Exames <button href="#" [routerLink]="['/pacientes/:id/exames', 'new']" type="button" class="btn btn-primary">
+  Adicionar
+</button></h1>
+<div id="notificationMessage" *ngIf="exames.length == 0" class="alert alert-da" role="alert">
+    Lista de exame vazia
+  </div>
+<table *ngIf="exames.length >= 1" class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Data Exame</th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <tr *ngFor="let exame of exames">
+      <th scope="row">{{exame.id}}</th>
+      <td>{{exame.dataExame}}</td>
+      <td>{{exame.valor}}</td>
+      <td>{{exame.dataResultado}}</td>
+      <td><div class="btn-group-sm" role="group" aria-label="Basic example">
+          <button type="button" href="#" (click)="show(exame.id)" class="btn btn-secondary">Visualizar</button>
+          <button type="button" href="#" (click)="edit(exame.id)" class="btn btn-secondary">Editar</button>
+        </div></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

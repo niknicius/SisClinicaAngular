@@ -28,7 +28,15 @@ import { ListConsultasComponent } from './consulta/list-consultas/list-consultas
 import { NewConsultaComponent } from './consulta/new-consulta/new-consulta.component';
 import { ShowConsultaComponent } from './consulta/show-consulta/show-consulta.component';
 import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.component';
+<<<<<<< HEAD
 import { ConsultaService } from './consulta/consulta.service';
+=======
+import { EditExameComponent } from './exame/edit-exame/edit-exame.component';
+import { ShowExameComponent } from './exame/show-exame/show-exame.component';
+import { NewExameComponent } from './exame/new-exame/new-exame.component';
+import { ListExamesComponent } from './exame/list-exames/list-exames.component';
+import { ExameService } from './exame/exame.service';
+>>>>>>> ad8083661d325ef52b4e98125d4e373289b8ed9e
 
 
 @NgModule({
@@ -47,6 +55,10 @@ import { ConsultaService } from './consulta/consulta.service';
     NewConsultaComponent,
     ShowConsultaComponent,
     EditConsultaComponent,
+    ListExamesComponent,
+    NewExameComponent,
+    ShowExameComponent,
+    EditExameComponent,
     DashboardComponent
   ],
   imports: [
@@ -60,6 +72,7 @@ import { ConsultaService } from './consulta/consulta.service';
     AppService,
     PacienteService,
     ConsultaService,
+    ExameService,
     ApiService,
     MedicoService
   ],

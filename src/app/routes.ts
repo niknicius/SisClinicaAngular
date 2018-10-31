@@ -13,6 +13,10 @@ import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.co
 import { ListConsultasComponent } from './consulta/list-consultas/list-consultas.component';
 import { NewConsultaComponent } from './consulta/new-consulta/new-consulta.component';
 import { ShowConsultaComponent } from './consulta/show-consulta/show-consulta.component';
+import { ListExamesComponent } from './exame/list-exames/list-exames.component';
+import { NewExameComponent } from './exame/new-exame/new-exame.component';
+import { ShowExameComponent } from './exame/show-exame/show-exame.component';
+import { EditExameComponent } from './exame/edit-exame/edit-exame.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
@@ -30,5 +34,15 @@ export const routes: Routes = [
   { path: 'pacientes/:id/consultas/:id', component: ShowConsultaComponent},
   { path: 'pacientes/:id/consultas/edit/:id', component: EditConsultaComponent},
   { path: 'dashboard', component: DashboardComponent}
+  { path: 'consultas' , component: ListConsultasComponent},
+  { path: 'consultas/new', component: NewConsultaComponent},
+  { path: 'consultas/:id', component: ShowConsultaComponent},
+  { path: 'consultas/edit/:id', component: EditConsultaComponent},
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'pacientes/:id/exames' , component: ListExamesComponent},
+  { path: 'pacientes/:id/exames/new', component: NewExameComponent},
+  { path: 'pacientes/:id/exames/:id2', component: ShowExameComponent},
+  { path: 'pacientes/:id/exames/edit/:id2', component: EditExameComponent}
+
 
 ];
