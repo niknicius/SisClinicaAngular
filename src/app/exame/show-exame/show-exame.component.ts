@@ -15,33 +15,32 @@ export class ShowExameComponent implements OnInit {
 
   public exame: any = {};
   public id: number;
-  public id2: number;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private exameService: ExameService) { }
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.id2 = params['id2'];
-      this.id = params['id'];
-
-      if (this.id2) {
-        this.exameService.getById(this.id2).subscribe((exame: any) => {
-          if (exame) {
-            this.exame = exame;
-            this.id = this.id2;
-          } else {
-            alert('Exame não encontrado!');
-            this.router.navigate(['/pacientes/'+this.id+'/exames']);
-          }
-        });
-      };
-  });
-}
-edit(){
-  this.router.navigate(['/pacientes/'+this.id+'/exames/edit/', this.id2]);
+    ngOnInit() {
+      this.route.params.subscribe(params => {
+        const id = params['id'];
+        const id2 = params['id2'];
+        if (id) {
+          this.exameService.getById(id).subscribe((exame: any) => {
+            if (exame) {
+              this.exame = exame;
+              console.log(exame);
+              this.id = id;
+            } else {
+              alert('Exame não encontrado!');
+              this.router.navigate(['/exames']);
+            }
+          });
+        };
+    });
+  }
+edit(id){
+  this.router.navigate(['/exames/edit/', id]);
   return false;
 }
 
