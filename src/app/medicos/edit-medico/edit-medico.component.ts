@@ -35,7 +35,7 @@ export class EditMedicoComponent implements OnInit {
 
       }
       else{
-        console.log(`Medico with id '${id}' not found, returning to list`);
+        console.log(`Medico com id '${id}' não encontrado, retornando para a lista`);
             this.router.navigate(['/medicos']);
       }
     });
@@ -62,5 +62,3 @@ export class EditMedicoComponent implements OnInit {
     )
   }
 }
-
-

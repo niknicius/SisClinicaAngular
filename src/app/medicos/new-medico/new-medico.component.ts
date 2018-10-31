@@ -16,7 +16,7 @@ export class NewMedicoComponent{
 
   onSubmit(form: any) {
     this.medicoService.add(JSON.stringify(
-      new Medico(form.nome, form.especializacao, form.crm, form.cpf, form.salaDeAtendimento, form.salario, form.plantao)))
+      new Medico(form.nome, form.especialidade, form.crm, form.cpf, form.salaDeAtendimento, form.salario, form.plantao)))
       .subscribe((result) => {
         console.log(result);
         alert('Medico cadastrado!');
