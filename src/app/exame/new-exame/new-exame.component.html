@@ -1,0 +1,21 @@
+<div class="container-fluid"><h1>New Exame</h1>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div class="form-group">
+    <label for="exame_name">DataExame</label>
+    <input type="text" class="form-control" id="exame_dataExame" name="dataExame"  placeholder="Data Exame" ngModel> <br>
+  </div>
+  <div class="form-group">
+    <label for="exame_name">Valor</label>
+    <input type="text" class="form-control" id="exame_valor" name="valor" placeholder="Valor" ngModel> <br>
+  </div>
+  <div class="form-group">
+    <label for="exame_name">DataResultado</label>
+    <input type="text" class="form-control" id="exame_dataResultado" name="exame_dataResultado"  placeholder="Data Resultado" ngModel> <br>
+  </div>
+
+<button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+
+<a [routerLink]="['/pacientes/:id/exames']">Voltar</a>
+</div>
