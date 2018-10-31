@@ -16,7 +16,6 @@ export class ListExamesComponent implements OnInit {
   message: string;
   exames: Array<any> = [];
   private id: number;
-  private id2: number;
 
   constructor(
     private router: Router,
@@ -28,16 +27,15 @@ export class ListExamesComponent implements OnInit {
   ngOnInit(){
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      this.id2 = params['id2'];
+      this.service.getAll(this.id).subscribe(dataExame => {
+        this.exames = dataExame;
+        console.log(dataExame);
+      });
     });
-
-    this.service.getAll().subscribe(data => {
-      this.exames = data;});
-
   }
 
   getExames() {
-    this.exames = this.service.getAll();
+    //this.exames = this.service.getAll();
   }
 
   reload(){
@@ -47,13 +45,13 @@ export class ListExamesComponent implements OnInit {
 
   show(id) {
     this.service.clearMessage();
-    this.router.navigate(['/pacientes/'+this.id+'/exames', this.id2]);
+    this.router.navigate(['/exames', id]);
     return false;
   }
 
   edit(id) {
     this.service.clearMessage();
-    this.router.navigate(['/pacientes/'+this.id+'/exames/edit/', this.id2]);
+    this.router.navigate(['/exames/edit/', id]);
     return false;
   }
 }

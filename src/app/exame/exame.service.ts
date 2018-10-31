@@ -6,8 +6,6 @@ import { AppService } from '../app.service';
 import { ApiService } from '../api.service';
 import { RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Router, ActivatedRoute } from '@angular/router';
-
 
 @Injectable()
 
@@ -16,32 +14,25 @@ export class ExameService implements OnInit {
    // Placeholder for last id so we can simulate
    // automatic incrementing of id's
   
-   private id: number;
-   private id2: number;
-
-  constructor(private route: ActivatedRoute, private router: Router, private appService: AppService, private apiService: ApiService) {}
 
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-      this.id2 = params['id2'];
-    });
+  constructor(private appService: AppService, private apiService: ApiService) {}
 
-  }
+
+  ngOnInit() {}
 
   // Simulate POST /exame
-  add(id: any, examej): any {
+  add(examej,idUser): any {
     // if (!exame.id) {
     //   exame.id = ++this.lastId;
     // }
 
-    return this.apiService.postExame('pacientes/' + id + '/exames', examej);
+    return this.apiService.post('/pacientes/' + idUser + '/exames/', examej);
   }
 
   getById(id: any): Observable<any>{
 
-    return this.apiService.getByIdExame('exame', id);
+    return this.apiService.getById('/pacientes/' +id + 'exames', id);
 
   }
 
@@ -51,13 +42,13 @@ export class ExameService implements OnInit {
     }
 
   // Simulate PUT /exame/:id
-  update(newExame: Exame, id: any, id2: any) {
-    return this.apiService.putExame('pacientes/' + id + '/exames/' + id2, newExame);
+  update(newExame: Exame, id: any) {
+    return this.apiService.put('exames/' + id, newExame);
   }
 
   // Simulate GET /books
-  getAll(): any {
-    return this.apiService.getAllExame();
+  getAll(id:any): any {
+    return this.apiService.getAll('pacientes/' +id + '/exames');
   }
 
   // // Simulate GET /books/:id

@@ -1,22 +1,24 @@
-<h1>Editing exame</h1>
+<div class="container-fluid">
+  <h1>Edit Paciente</h1>
 
-<form *ngIf="exame" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <div class="form-group">
+          <label for="exame_dataExame">Data da Exame</label>
+          <input type="text" class="form-control" id="exame_dataExame" name="dataExame" placeholder="DD/MM/AAAA"
+              ngModel>
+      </div>
+      <div class="form-group">
+        <label for="exame_Valor">Valor</label>
+        <input type="text" class="form-control" id="exame_valor" name="valor" placeholder="Valor"
+            ngModel>
+    </div>
+      <div class="form-group">
+          <label for="exame_dataResultado">Data do Resultado</label>
+          <input type="text" class="form-control" id="exame_dataResultado" name="dataResultado" placeholder="DD/MM/AAAA"
+              ngModel>
+      </div>
+      <button type="submit" class="btn btn-primary">Atualizar</button>
+  </form>
 
-  <div>
-    <label for="exame_dataExame">dataExame</label> <br>
-    <input type="text" id="exame_dataExame" id="dataExame" [ngModel]="exame.dataExame"> <br>
-  </div>
-  <div>
-    <label for="exame_valor">valor</label> <br>
-    <input type="text" id="exame_valor" id="valor" [ngModel]="exame.valor"> <br>
-  </div>
-  <div>
-    <label for="exame_dataResultado">dataResultado</label> <br>
-    <input type="text" id="exame_dataResultado" id="dataResultado" [ngModel]="exame.dataResultado"> <br>
-  </div>
-
-  <input type="submit" id="edit_exame_button" value="Update exame">
-</form>
-
-<a href="#" (click)="show()">Show</a>
-<a href="#" (click)="back()">Back</a>
+  <a [routerLink]="['/exames']">Voltar</a>
+</div>
