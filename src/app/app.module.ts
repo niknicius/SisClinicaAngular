@@ -28,6 +28,11 @@ import { ListConsultasComponent } from './consulta/list-consultas/list-consultas
 import { NewConsultaComponent } from './consulta/new-consulta/new-consulta.component';
 import { ShowConsultaComponent } from './consulta/show-consulta/show-consulta.component';
 import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.component';
+import { EditExameComponent } from './exame/edit-exame/edit-exame.component';
+import { ShowExameComponent } from './exame/show-exame/show-exame.component';
+import { NewExameComponent } from './exame/new-exame/new-exame.component';
+import { ListExamesComponent } from './exame/list-exames/list-exames.component';
+import { ExameService } from './exame/exame.service';
 
 
 @NgModule({
@@ -46,6 +51,10 @@ import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.co
     NewConsultaComponent,
     ShowConsultaComponent,
     EditConsultaComponent,
+    ListExamesComponent,
+    NewExameComponent,
+    ShowExameComponent,
+    EditExameComponent,
     DashboardComponent
   ],
   imports: [
@@ -58,6 +67,7 @@ import { EditConsultaComponent } from './consulta/edit-consulta/edit-consulta.co
   providers: [
     AppService,
     PacienteService,
+    ExameService,
     ApiService,
     {provide: APP_BASE_HREF, useValue: '/#!/'},
     MedicoService

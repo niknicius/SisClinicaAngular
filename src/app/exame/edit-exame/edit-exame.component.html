@@ -1,0 +1,22 @@
+<h1>Editing exame</h1>
+
+<form *ngIf="exame" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+
+  <div>
+    <label for="exame_dataExame">dataExame</label> <br>
+    <input type="text" id="exame_dataExame" id="dataExame" [ngModel]="exame.dataExame"> <br>
+  </div>
+  <div>
+    <label for="exame_valor">valor</label> <br>
+    <input type="text" id="exame_valor" id="valor" [ngModel]="exame.valor"> <br>
+  </div>
+  <div>
+    <label for="exame_dataResultado">dataResultado</label> <br>
+    <input type="text" id="exame_dataResultado" id="dataResultado" [ngModel]="exame.dataResultado"> <br>
+  </div>
+
+  <input type="submit" id="edit_exame_button" value="Update exame">
+</form>
+
+<a href="#" (click)="show()">Show</a>
+<a href="#" (click)="back()">Back</a>
