@@ -27,10 +27,14 @@ export class ConsultaService implements OnInit {
     // }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.apiService.post('consultas', consulta);
 =======
     return this.apiService.post('consulta', consulta);
 >>>>>>> ad8083661d325ef52b4e98125d4e373289b8ed9e
+=======
+    return this.apiService.post('consulta', consulta);
+>>>>>>> fdc2c3d41f9b741608a606c3d758e84b41b5db86
   }
 
   getById(id: any): Observable<any>{
@@ -59,10 +63,14 @@ export class ConsultaService implements OnInit {
   // Simulate GET /books
   getAll(): any {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.apiService.getAll('consultas');
 =======
     return this.apiService.getAll('consulta');
 >>>>>>> ad8083661d325ef52b4e98125d4e373289b8ed9e
+=======
+    return this.apiService.getAll('consultas');
+>>>>>>> fdc2c3d41f9b741608a606c3d758e84b41b5db86
   }
 
   // // Simulate GET /books/:id
