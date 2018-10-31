@@ -15,28 +15,25 @@ export class NewExameComponent implements OnInit{
 
   constructor(private route: ActivatedRoute, private router: Router, private exameService: ExameService, private apiService: ApiService) {}
 
-  private id: number;
-  private id2: number;
+  id: number = 0;
   
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = params['id'];
-      this.id2 = params['id2'];
-    });
-
-  }
+    this.id = params['id'];
+  });};
 
 
-  onSubmit(id: number,form: any) {
+  onSubmit(form: any) {
 
-    this.exameService.add(this.id, JSON.stringify(new Exame(form.dataExame, form.valor, form.dataResultado)))
+    this.exameService.add(JSON.stringify(new Exame(this.id,form.dataExame,form.valor,
+      form.dataResultado)), this.id)
       .subscribe((result) => {
       console.log(result);
       alert('Exame cadastrado!');
-    this.router.navigate(['/pacientes/'+this.id+'/exames/',result['id2']]);
+      this.router.navigate(['paciente/',result['idPaciente'],'/exames/',result['id']]);
     },
-    error => {alert('Um erro aconteceu, tente novamente');})
+    error => {alert('Um erro aconteceu, tente novamente');},)
 
   }
 

@@ -1,14 +1,17 @@
-<div class="container-fluid"><h1>Exames <button href="#" [routerLink]="['/pacientes/:id/exames', 'new']" type="button" class="btn btn-primary">
+<div class="container-fluid"><h1>Exames <button href="#" [routerLink]="['/exames', 'new']" type="button" class="btn btn-primary">
   Adicionar
 </button></h1>
 <div id="notificationMessage" *ngIf="exames.length == 0" class="alert alert-da" role="alert">
-    Lista de exame vazia
+    Lista de exames vazia
   </div>
 <table *ngIf="exames.length >= 1" class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Data Exame</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Data Resultado</th>
+
       </tr>
     </thead>
 

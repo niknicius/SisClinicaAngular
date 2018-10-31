@@ -18,7 +18,6 @@ export class ApiService implements OnInit {
   }
 
   url: string = 'http://localhost:8080/';
-  url2: string = 'http://localhost:8080/pacientes/'+this.id+'/exames';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
@@ -54,27 +53,6 @@ export class ApiService implements OnInit {
       console.log(result);
     }, error => console.log('oops', error));
     return url;
-  }
-  getAllExame(): Observable<any> {
-    return this.http.get('//localhost:8080/pacientes/'+this.id+'/exames');
-  }
-
-  postExame(endpoint: any, body: any){
-
-    console.log(body);
-    return this.http.post(this.url2 + endpoint, body, this.httpOptions);
-  }
-
-  putExame(endpoint: any, body: any): Observable<any>{
-    return this.http.put(this.url2 + endpoint, body, this.httpOptions);
-  }
-
-  getExame(endpoint: any): Observable<any>{
-    return this.http.get(this.url2 + endpoint);
-  }
-
-  getByIdExame(endpoint: any, id: any): Observable<any>{
-    return this.http.get(this.url2 + endpoint + '/' + id);
   }
 
 }

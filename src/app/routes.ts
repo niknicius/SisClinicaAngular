@@ -41,8 +41,12 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent},
   { path: 'pacientes/:id/exames' , component: ListExamesComponent},
   { path: 'pacientes/:id/exames/new', component: NewExameComponent},
-  { path: 'pacientes/:id/exames/:id2', component: ShowExameComponent},
-  { path: 'pacientes/:id/exames/edit/:id2', component: EditExameComponent}
+  { path: 'pacientes/:id/exames/:id', component: ShowExameComponent},
+  { path: 'pacientes/:id/exames/edit/:id', component: EditExameComponent},
+  { path: 'exames' , component: ListExamesComponent},
+  { path: 'exames/new', component: NewExameComponent},
+  { path: 'exames/:id', component: ShowExameComponent},
+  { path: 'exames/edit/:id', component: EditExameComponent}
 
 
 ];
