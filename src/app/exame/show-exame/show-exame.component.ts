@@ -15,6 +15,7 @@ export class ShowExameComponent implements OnInit {
 
   public exame: any = {};
   public id: number;
+  public id2: number;
 
   constructor(
     private router: Router,
@@ -26,11 +27,12 @@ export class ShowExameComponent implements OnInit {
         const id = params['id'];
         const id2 = params['id2'];
         if (id) {
-          this.exameService.getById(id).subscribe((exame: any) => {
+          this.exameService.getById(id,id2).subscribe((exame: any) => {
             if (exame) {
               this.exame = exame;
               console.log(exame);
               this.id = id;
+              this.id2 = id2;
             } else {
               alert('Exame não encontrado!');
               this.router.navigate(['/exames']);
@@ -40,8 +42,12 @@ export class ShowExameComponent implements OnInit {
     });
   }
 edit(id){
-  this.router.navigate(['/exames/edit/', id]);
+  this.router.navigate(['pacientes/' + this.id + '/exames/' + this.id2 + '/edit']);
   return false;
+}
+
+back(){
+  this.router.navigate(['pacientes/' + this.id + '/exames']);
 }
 
 }

@@ -42,4 +42,14 @@ edit(){
   return false;
 }
 
+exames(){
+  this.router.navigate(['/pacientes/' + this.id +  '/exames']);
+  return false;
+}
+
+consultas(){
+  this.router.navigate(['/pacientes/' + this.id +  '/consultas']);
+  return false;
+}
+
 }

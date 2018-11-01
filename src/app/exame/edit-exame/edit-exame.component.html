@@ -5,20 +5,20 @@
       <div class="form-group">
           <label for="exame_dataExame">Data da Exame</label>
           <input type="text" class="form-control" id="exame_dataExame" name="dataExame" placeholder="DD/MM/AAAA"
-              ngModel>
+              [ngModel]='exame.dataExame'>
       </div>
       <div class="form-group">
         <label for="exame_Valor">Valor</label>
         <input type="text" class="form-control" id="exame_valor" name="valor" placeholder="Valor"
-            ngModel>
+              [ngModel]='exame.valor'>
     </div>
       <div class="form-group">
           <label for="exame_dataResultado">Data do Resultado</label>
           <input type="text" class="form-control" id="exame_dataResultado" name="dataResultado" placeholder="DD/MM/AAAA"
-              ngModel>
+             [ngModel]='exame.dataResultado'>
       </div>
       <button type="submit" class="btn btn-primary">Atualizar</button>
   </form>
 
-  <a [routerLink]="['/exames']">Voltar</a>
+  <a (click)="back()">Voltar</a>
 </div>

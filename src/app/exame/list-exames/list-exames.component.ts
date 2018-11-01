@@ -45,13 +45,18 @@ export class ListExamesComponent implements OnInit {
 
   show(id) {
     this.service.clearMessage();
-    this.router.navigate(['/exames', id]);
+    this.router.navigate(['pacientes/' + this.id + '/exames', id]);
     return false;
   }
 
   edit(id) {
     this.service.clearMessage();
     this.router.navigate(['/exames/edit/', id]);
+    return false;
+  }
+
+  add(){
+    this.router.navigate(['/pacientes/' + this.id + '/exames/new']);
     return false;
   }
 }

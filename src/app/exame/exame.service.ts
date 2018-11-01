@@ -30,9 +30,9 @@ export class ExameService implements OnInit {
     return this.apiService.post('/pacientes/' + idUser + '/exames/', examej);
   }
 
-  getById(id: any): Observable<any>{
+  getById(id: any, id2:any): Observable<any>{
 
-    return this.apiService.getById('/pacientes/' +id + 'exames', id);
+    return this.apiService.getById('/pacientes/' +id + '/exames', id2);
 
   }
 
@@ -42,8 +42,8 @@ export class ExameService implements OnInit {
     }
 
   // Simulate PUT /exame/:id
-  update(newExame: Exame, id: any) {
-    return this.apiService.put('exames/' + id, newExame);
+  update(newExame: Exame, id: any, id2:any) {
+    return this.apiService.put('pacientes/' + id2 + '/exames/' + id, newExame);
   }
 
   // Simulate GET /books

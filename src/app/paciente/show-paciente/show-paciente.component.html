@@ -32,7 +32,12 @@
   <strong>UF:</strong>
     {{paciente.uf}}
   </p>
-
-  <a href="#" (click)="edit()">Editar</a> | <a href="#" (click)="back()">Voltar</a>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" (click)="edit()" class="btn btn-primary">Editar</button>
+    <button type="button" (click)="exames()" class="btn btn-primary">Exames</button>
+    <button type="button" (click)="consultas()" class="btn btn-primary">Consultas</button>
+    <button type="button" (click)="back()" class="btn btn-primary">Voltar</button>
+  </div>
+<br>
 </div>
 </div>

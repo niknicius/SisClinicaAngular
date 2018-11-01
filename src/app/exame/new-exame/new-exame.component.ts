@@ -31,7 +31,7 @@ export class NewExameComponent implements OnInit{
       .subscribe((result) => {
       console.log(result);
       alert('Exame cadastrado!');
-      this.router.navigate(['paciente/',result['idPaciente'],'/exames/',result['id']]);
+      this.router.navigate(['pacientes/' + result['idPaciente'] + '/exames/' + result['id']]);
     },
     error => {alert('Um erro aconteceu, tente novamente');},)
 
