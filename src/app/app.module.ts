@@ -2,12 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-<<<<<<< HEAD
-import { RouterModule } from '@angular/router';
 import {NgxMaskModule} from 'ngx-mask';
-=======
 import { RouterModule, ActivatedRoute } from '@angular/router';
->>>>>>> fbb065bc24d7871995b8d116498a7bbebe0b6d17
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';

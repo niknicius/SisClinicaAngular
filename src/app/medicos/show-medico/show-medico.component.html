@@ -6,22 +6,27 @@
   </p>
   <p>
   <strong>CPF:</strong>
-    {{medico.cpf}}
+    {{medico.cpf | mask:'000.000.000-00'}}
   </p>
   <p>
   <strong>CRM:</strong>
     {{medico.crm}}
   </p>
   <p>
-  <strong>salaDeAtendimento:</strong>
+  <strong>Sala de Atendimento:</strong>
     {{medico.salaDeAtendimento}}
   </p>
+  <p>
+      <strong>Salario:</strong>
+        R${{medico.salario}}
+      </p>
   <p>
   <strong>Plantao:</strong>
     {{medico.plantao}}
   </p>
-   <p>
-
-  <a href="#" (click)="edit()">Editar</a> | <a href="#" (click)="back()">Voltar</a>
+  <div class="btn-group" role="group" aria-label="buttons">
+    <button type="button" (click)="edit()" class="btn btn-secondary">Editar</button>
+    <button type="button" (click)="back()" class="btn btn-secondary">Voltar</button>
+  </div>
 </div>
 </div>

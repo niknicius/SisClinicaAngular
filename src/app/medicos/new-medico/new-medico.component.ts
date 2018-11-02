@@ -15,8 +15,15 @@ export class NewMedicoComponent{
   constructor(private router: Router, private medicoService: MedicoService) {}
 
   onSubmit(form: any) {
+    let plantao;
+    if(form.plantao == "true"){
+      plantao = true;
+    }
+    else{
+      plantao = false;
+    }
     this.medicoService.add(JSON.stringify(
-      new Medico(form.nome, form.especialidade, form.crm, form.cpf, form.salaDeAtendimento, form.salario, form.plantao)))
+      new Medico(form.nome, form.especialidade, form.crm, form.cpf, form.salaDeAtendimento, form.salario, plantao)))
       .subscribe((result) => {
         console.log(result);
         alert('Medico cadastrado!');

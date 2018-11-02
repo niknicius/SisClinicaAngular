@@ -40,4 +40,9 @@ export class ShowMedicoComponent implements OnInit {
     return false;
     }
 
+  back(){
+      this.router.navigate(['/medicos']);
+      return false;
+      }  
+
 }

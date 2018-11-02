@@ -5,22 +5,22 @@
         <div class="form-group">
             <label for="consulta_paciente">Paciente</label>
             <input type="text" class="form-control" id="consulta_paciente" name="paciente" placeholder="Paciente a consultar"
-                ngModel>
+                [ngModel]="consulta.idPaciente">
         </div>
         <div class="form-group">
             <label for="consulta_medico">Medico</label>
             <input type="text" class="form-control" id="consulta_medico" name="medico" placeholder="Medico a efetuar consulta"
-                ngModel>
+            [ngModel]="consulta.idMedico">
         </div>
         <div class="form-group">
             <label for="consulta_dataConsulta">Data da Consulta</label>
-            <input type="text" class="form-control" id="consulta_dataConsulta" name="dataConsulta" placeholder="DD/MM/AAAA"
-                ngModel>
+            <input type="text" class="form-control" mask="00/00/0000" id="consulta_dataConsulta" name="dataConsulta" placeholder="DD/MM/AAAA"
+            [ngModel]="consulta.dataConsulta">
         </div>
         <div class="form-group">
             <label for="consulta_dataRetorno">Data do Retorno</label>
-            <input type="text" class="form-control" id="consulta_dataRetorno" name="dataRetorno" placeholder="DD/MM/AAAA"
-                ngModel>
+            <input type="text" class="form-control" mask="00/00/0000" id="consulta_dataRetorno" name="dataRetorno" placeholder="DD/MM/AAAA"
+            [ngModel]="consulta.dataRetorno">
         </div>
         <div class="form-group">
             <label for="consulta_aberta">Status</label>

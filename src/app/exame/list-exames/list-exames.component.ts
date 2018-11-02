@@ -51,7 +51,7 @@ export class ListExamesComponent implements OnInit {
 
   edit(id) {
     this.service.clearMessage();
-    this.router.navigate(['/exames/edit/', id]);
+    this.router.navigate(['pacientes/' + this.id + '/exames/' + id + '/edit']);
     return false;
   }
 

@@ -8,16 +8,16 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Data Consulta</th>
-          <th scope="col">Data Retorno</th>
+          <th scope="col">ID Paciente</th>
+          <th scope="col">ID Medico</th>
           <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let consulta of consultas">
           <th scope="row">{{consulta.id}}</th>
-          <td>{{consulta.dataConsulta}}</td>
-          <td>{{consulta.dataRetorno}}</td>
+          <td>{{consulta.idPaciente}}</td>
+          <td>{{consulta.idMedico}}</td>
           <td><div class="btn-group-sm" role="group" aria-label="Basic example">
               <button type="button" href="#" (click)="show(consulta.id)" class="btn btn-secondary">Visualizar</button>
               <button type="button" href="#" (click)="edit(consulta.id)" class="btn btn-secondary">Editar</button>
@@ -26,26 +26,4 @@
         </tr>
       </tbody>
     </table>
-<!-- <table>
-  <thead>
-    <tr>
-      <th id="nameHeader">ID   </th>
-      <th id="authorHeader">Nome</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let consulta of consulta">
-      <td>{{consulta.id}}</td>
-      <td>{{consulta.nome}}</td>
-      <td><div class="btn-group-sm" role="group" aria-label="Basic example">
-          <button type="button" href="#" (click)="show(consulta.id)" class="btn btn-secondary">Visualizar</button>
-          <button type="button" href="#" (click)="edit(consulta.id)" class="btn btn-secondary">Editar</button>
-          <button type="button" href="#" (click)="destroy(consulta.id)" class="btn btn-secondary">Deletar</button>
-        </div></td>
-    </tr>
-  </tbody>
-</table> -->
-
 </div>

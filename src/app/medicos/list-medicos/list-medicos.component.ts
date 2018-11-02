@@ -39,7 +39,7 @@ export class ListMedicosComponent implements OnInit{
 
   edit(id){
     this.service.clearMessage();
-    this.router.navigate(['/medicos', id, 'edit']);
+    this.router.navigate(['/medicos', 'edit', id]);
     return false;
   }
 

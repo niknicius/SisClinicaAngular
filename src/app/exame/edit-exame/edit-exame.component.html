@@ -4,17 +4,17 @@
   <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
       <div class="form-group">
           <label for="exame_dataExame">Data da Exame</label>
-          <input type="text" class="form-control" id="exame_dataExame" name="dataExame" placeholder="DD/MM/AAAA"
+          <input type="text" class="form-control" mask="00/00/0000" id="exame_dataExame" name="dataExame" placeholder="DD/MM/AAAA"
               [ngModel]='exame.dataExame'>
       </div>
       <div class="form-group">
         <label for="exame_Valor">Valor</label>
-        <input type="text" class="form-control" id="exame_valor" name="valor" placeholder="Valor"
+        <input type="text" class="form-control" prefix="R$ " mask="0000"  id="exame_valor" name="valor" placeholder="Valor"
               [ngModel]='exame.valor'>
     </div>
       <div class="form-group">
           <label for="exame_dataResultado">Data do Resultado</label>
-          <input type="text" class="form-control" id="exame_dataResultado" name="dataResultado" placeholder="DD/MM/AAAA"
+          <input type="text" class="form-control" mask="00/00/0000" id="exame_dataResultado" name="dataResultado" placeholder="DD/MM/AAAA"
              [ngModel]='exame.dataResultado'>
       </div>
       <button type="submit" class="btn btn-primary">Atualizar</button>

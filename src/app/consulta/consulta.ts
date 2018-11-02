@@ -5,8 +5,8 @@ export class Consulta {
 
 
     constructor(
-        public paciente: Paciente,
-        public medico: Medico,
+        public idPaciente: number,
+        public idMedico: number,
         public dataConsulta: string,
         public dataRetorno: string,
         public aberta: boolean
