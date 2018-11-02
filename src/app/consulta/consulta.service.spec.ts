@@ -1,14 +1,18 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { ConsultaService } from './consulta.service';
 import { Consulta } from './consulta';
 import { Paciente } from 'app/paciente/paciente';
 import { Medico } from 'app/medicos/medico';
+import { AppService } from '../app.service';
+
+
 
 describe('ConsultaService', () => {
+  
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ConsultaService]
+      
+      providers: [ConsultaService, AppService]
     });
   });
 
