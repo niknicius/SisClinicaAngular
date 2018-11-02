@@ -1,7 +1,7 @@
 <div class="container-fluid"><h1>Medicos <button href="#" [routerLink]="['/medicos', 'new']" type="button" class="btn btn-primary">
   Adicionar
 </button></h1>
-<div id="notificationMessage" *ngIf="medicos.length == 0" class="alert alert-da" role="alert">
+<div id="notificationMessage" *ngIf="medicos.length == 0" class="alert alert-danger" role="alert">
     Lista de medicos vazia
   </div>
 <table *ngIf="medicos.length >= 1" class="table">

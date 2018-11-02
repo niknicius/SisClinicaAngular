@@ -1,16 +1,12 @@
 <div class="container-fluid"><div id="showPanel" *ngIf="consulta">
   <h1>Dados da consulta de {{paciente.nome}}</h1>
   <p>
-  <strong>Medico:</strong>
-    {{consulta.idMedico}}
-  </p>
-  <p>
   <strong>Data da Consulta:</strong>
-    {{consulta.dataConsulta}}
+    {{consulta.dataConsulta | mask:'00/00/0000'}}
   </p>
   <p>
   <strong>Data do Retorno:</strong>
-    {{consulta.dataRetorno}}
+    {{consulta.dataRetorno | mask:'00/00/0000' }}
   </p>
   
   <a href="#" (click)="edit()">Editar</a> | <a href="#" (click)="back()">Voltar</a>

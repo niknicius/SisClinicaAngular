@@ -35,7 +35,7 @@ export class EditExameComponent implements OnInit {
       this.exameService.update(this.exame, this.id2, this.id).subscribe((result) => {
         console.log(result);
         alert('Exame atualizado!');
-        this.router.navigate(['paciente/',result['idPaciente'],'/exames/',result['id']]);
+        this.router.navigate(['pacientes/'+ result['idPaciente']+'/exames/'+ result['id']]);
       }, error => { alert('Um erro aconteceu, tente novamente!'); });
     }
 

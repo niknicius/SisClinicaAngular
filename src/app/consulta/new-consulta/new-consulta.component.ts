@@ -26,7 +26,7 @@ export class NewConsultaComponent implements OnInit{
       .subscribe((result) => {
       console.log(result);
       alert('Consulta cadastrado!');
-    this.router.navigate(['/consultas/',result['id']]);
+    this.router.navigate(['consultas/',result['id']]);
     },
     error => {alert('Um erro aconteceu, tente novamente');})
 
