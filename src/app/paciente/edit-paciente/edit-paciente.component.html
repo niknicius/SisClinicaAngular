@@ -10,19 +10,19 @@
           <input type="text" class="form-control" id="paciente_raca" name="raca" placeholder="Raca" [ngModel]="paciente.raca">
       </div>
       <div class="form-group">
-          <label for="paciente_dataNascimento">Data de Nascimentp</label>
-          <input type="text" class="form-control" id="paciente_dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA" [ngModel]="paciente.dataNascimento">
+          <label for="paciente_dataNascimento">Data de Nascimento</label>
+          <input type="text" class="form-control" mask="00/00/0000" id="paciente_dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA" [ngModel]="paciente.dataNascimento">
       </div>
       <div class="form-group">
           <label for="paciente_cpf">CPF</label>
-          <input type="text" class="form-control" id="paciente_cpf" name="cpf" placeholder="CPF" [ngModel]="paciente.cpf">
+          <input type="text" class="form-control" mask="000.000.000-00" id="paciente_cpf" name="cpf" placeholder="CPF" [ngModel]="paciente.cpf">
       </div>
       <div class="form-group">
           <label for="paciente_rg">RG</label>
           <input type="text" class="form-control" id="paciente_rg" name="rg" placeholder="RG" [ngModel]="paciente.rg">
       </div>
       <div class="form-group">
-          <label for="paciente_nome">Sexo</label>
+          <label for="paciente_sexo">Sexo</label>
           <select class="form-control" name="sexo" id="paciente_sexo" ngModel>
             <option *ngIf="sexo == 0; else else1" selected="selected" value="">Selecione</option>
             <option *ngIf="sexo == 1; else else2" selected="selected" value="masculino">Masculino</option>
@@ -35,8 +35,7 @@
             </ng-template>
             <ng-template #else3>
                 <option value="feminino">Feminino</option>
-            </ng-template>
-              
+            </ng-template> 
           </select>
       </div>
       <div class="form-group">
@@ -45,7 +44,7 @@
       </div>
       <div class="form-group">
           <label for="paciente_cep">CEP</label>
-          <input type="text" class="form-control" id="paciente_cep" name="cep" placeholder="CEP" [ngModel]="paciente.cep">
+          <input type="text" class="form-control" mask="00000-000" id="paciente_cep" name="cep" placeholder="CEP" [ngModel]="paciente.cep">
       </div>
       <div class="form-group">
           <label for="paciente_uf">UF</label>

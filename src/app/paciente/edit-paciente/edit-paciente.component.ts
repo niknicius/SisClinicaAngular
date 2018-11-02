@@ -60,6 +60,7 @@ export class EditPacienteComponent implements OnInit {
     this.paciente.cpf = form.cpf;
     this.paciente.rg = form.rg;
     this.paciente.sexo = form.sexo;
+    console.log(form.sexo);
     this.paciente.nacionalidade = form.nacionalidade;
     this.paciente.cep = form.cep;
     this.paciente.uf = form.uf;
@@ -68,7 +69,7 @@ export class EditPacienteComponent implements OnInit {
       console.log(result);
       alert('Paciente atualizado!');
       this.router.navigate(['/pacientes/',result['id']]);
-    }, error => { alert('Um erro aconteceu, tente novamente!'); });
+    }, error => { alert(error.error.message); });
   }
 
 }

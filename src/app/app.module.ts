@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import {NgxMaskModule} from 'ngx-mask';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -63,7 +64,8 @@ import { ListExamesComponent } from './exame/list-exames/list-exames.component';
     FormsModule,
     HttpModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgxMaskModule.forRoot()
   ],
   providers: [
     AppService,

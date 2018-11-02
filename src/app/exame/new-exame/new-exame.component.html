@@ -3,16 +3,16 @@
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
   <div class="form-group">
-    <label for="exame_name">DataExame</label>
-    <input type="text" class="form-control" id="exame_dataExame" name="dataExame"  placeholder="Data Exame" ngModel> <br>
+    <label for="exame_name">Data do Exame</label>
+    <input type="text" class="form-control" id="exame_dataExame" name="dataExame"  placeholder="Data Exame" required="required" ngModel> <br>
   </div>
   <div class="form-group">
     <label for="exame_name">Valor</label>
-    <input type="text" class="form-control" id="exame_valor" name="valor" placeholder="Valor" ngModel> <br>
+    <input type="text" class="form-control" id="exame_valor" prefix="R$" mask="000,00" name="valor" placeholder="Valor" required ngModel> <br>
   </div>
   <div class="form-group">
-    <label for="exame_name">DataResultado</label>
-    <input type="text" class="form-control" id="exame_dataResultado" name="dataResultado"  placeholder="Data Resultado" ngModel> <br>
+    <label for="exame_name">Data do Resultado</label>
+    <input type="text" class="form-control" id="exame_dataResultado" mask="00/00/0000" name="dataResultado" required placeholder="Data Resultado" ngModel> <br>
   </div>
 
 <button type="submit" class="btn btn-primary">Adicionar</button>

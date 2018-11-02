@@ -1,16 +1,16 @@
 <div class="container-fluid"><div id="showPanel" *ngIf="paciente">
-  <h1>Dados de {{paciente.nome}}</h1>
+  <h1>Dados do(a) <b>{{paciente.nome}}</b></h1>
   <p>
     <strong>Raça:</strong>
     {{paciente.raca}}
   </p>
   <p>
   <strong>Data de Nascimento:</strong>
-    {{paciente.dataNascimento}}
+    {{paciente.dataNascimento | mask: '00/00/0000'}}
   </p>
   <p>
   <strong>CPF:</strong>
-    {{paciente.cpf}}
+    {{paciente.cpf | mask: '000.000.000-00'}}
   </p>
   <p>
   <strong>RG:</strong>
@@ -26,7 +26,7 @@
   </p>
    <p>
   <strong>CEP:</strong>
-    {{paciente.cep}}
+    {{paciente.cep | mask: '00000-000' }}
   </p>
   <p>
   <strong>UF:</strong>
@@ -36,7 +36,6 @@
     <button type="button" (click)="edit()" class="btn btn-primary">Editar</button>
     <button type="button" (click)="exames()" class="btn btn-primary">Exames</button>
     <button type="button" (click)="consultas()" class="btn btn-primary">Consultas</button>
-    <button type="button" (click)="back()" class="btn btn-primary">Voltar</button>
   </div>
 <br>
 </div>
