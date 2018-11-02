@@ -1,12 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { PacienteService } from './paciente.service';
 import { Paciente } from './paciente';
+import { AppService } from 'app/app.service';
+
 
 describe('PacienteService', () => {
+  
+
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PacienteService]
+      providers: [PacienteService, AppService]
     });
   });
 
@@ -72,8 +75,7 @@ describe('PacienteService', () => {
       const paciente1 = new Paciente('Amanda', 'pardo', '04', '121', '42', 'f', 'br', '56', 'pb', 'cardio');
       service.add(paciente1);
       const paciente2 = new Paciente('Enos', 'pardo', '05', '122', '41', 'm', 'br', '55', 'pb', 'cardio');
-      paciente2.id = 3;
-      const updated = service.update(paciente2);
+      const updated = service.update(paciente2, 2);
       expect(updated).toBeUndefined();
     }));
   });

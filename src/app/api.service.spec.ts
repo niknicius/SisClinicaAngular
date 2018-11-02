@@ -1,5 +1,4 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { ApiService } from './api.service';
 
 describe('ApiService', () => {
@@ -9,7 +8,7 @@ describe('ApiService', () => {
     });
   });
 
-  it('should ...', inject([ApiService], (service: ApiService) => {
+  it('should exist', inject([ApiService], (service: ApiService) => {
     expect(service).toBeTruthy();
   }));
 });
