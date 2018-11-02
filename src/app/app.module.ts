@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -33,6 +33,7 @@ import { ShowExameComponent } from './exame/show-exame/show-exame.component';
 import { NewExameComponent } from './exame/new-exame/new-exame.component';
 import { ListExamesComponent } from './exame/list-exames/list-exames.component';
 import { ExameService } from './exame/exame.service';
+import { ConsultaService } from './consulta/consulta.service';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { ExameService } from './exame/exame.service';
     AppService,
     PacienteService,
     ExameService,
+    ConsultaService,
     ApiService,
     {provide: APP_BASE_HREF, useValue: '/#!/'},
     MedicoService

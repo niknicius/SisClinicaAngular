@@ -1,14 +1,18 @@
-import { TestBed, async, inject } from '@angular/core/testing';
-
+import { TestBed, inject } from '@angular/core/testing';
 import { ConsultaService } from './consulta.service';
 import { Consulta } from './consulta';
 import { Paciente } from 'app/paciente/paciente';
 import { Medico } from 'app/medicos/medico';
+import { AppService } from '../app.service';
+
+
 
 describe('ConsultaService', () => {
+  
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ConsultaService]
+      
+      providers: [ConsultaService, AppService]
     });
   });
 
@@ -17,31 +21,31 @@ describe('ConsultaService', () => {
   }));
   describe('#getAll()', () => {
 
-    it('should return an empty array by default', async(inject([ConsultaService], (service: ConsultaService) => {
+    it('should return an empty array by default', inject([ConsultaService], (service: ConsultaService) => {
       expect(service.getAll()).toEqual([]);
-    })));
+    }));
 
-    it('should return all appointments', async(inject([ConsultaService], (service: ConsultaService) => {
+    it('should return all appointments', inject([ConsultaService], (service: ConsultaService) => {
       const paciente1 = new Paciente('Amanda', 'pardo', '04', '121', '42', 'f', 'br', '56', 'pb', 'cardio');
       const medico1 = new Medico('Vini', 'Cardio', 6, '345', 2, 4000, true);
       const consul1 = new Consulta(paciente1, medico1, '31', '8', true);
       service.add(consul1);
       expect(service.getAll()).toEqual([consul1]);
-    })));
+    }));
   });
   describe('#save(appointment)', () => {
 
-    it('should automatically assign an incrementing id', async(inject([ConsultaService], (service: ConsultaService) => {
+    it('should automatically assign an incrementing id', inject([ConsultaService], (service: ConsultaService) => {
       const paciente1 = new Paciente('Amanda', 'pardo', '04', '121', '42', 'f', 'br', '56', 'pb', 'cardio');
       const medico1 = new Medico('Vini', 'Cardio', 6, '345', 2, 4000, true);
       const consul1 = new Consulta(paciente1, medico1, '31', '8', true);
       service.add(consul1);
       expect(service.getById(1)).toEqual(consul1);
-    })));
+    }));
   });
   describe('#delete(id)', () => {
 
-    it('should remove appointment with the corresponding id', async(inject([ConsultaService], (service: ConsultaService) => {
+    it('should remove appointment with the corresponding id', inject([ConsultaService], (service: ConsultaService) => {
       const paciente1 = new Paciente('Amanda', 'pardo', '04', '121', '42', 'f', 'br', '56', 'pb', 'cardio');
       const medico1 = new Medico('Vini', 'Cardio', 6, '345', 2, 4000, true);
       const consul1 = new Consulta(paciente1, medico1, '31', '8', true);
@@ -54,9 +58,9 @@ describe('ConsultaService', () => {
       expect(service.getAll()).toEqual([consul2]);
       service.delete(2);
       expect(service.getAll()).toEqual([]);
-    })));
+    }));
 
-    it('should not removing anything if todo with corresponding id is not found', async(inject([ConsultaService], (service: ConsultaService) => {
+    it('should not removing anything if todo with corresponding id is not found', inject([ConsultaService], (service: ConsultaService) => {
       const paciente1 = new Paciente('Amanda', 'pardo', '04', '121', '42', 'f', 'br', '56', 'pb', 'cardio');
       const medico1 = new Medico('Vini', 'Cardio', 6, '345', 2, 4000, true);
       const consul1 = new Consulta(paciente1, medico1, '31', '8', true);
@@ -67,11 +71,11 @@ describe('ConsultaService', () => {
       expect(service.getAll()).toEqual([consul1, consul2]);
       service.delete(3);
       expect(service.getAll()).toEqual([consul1, consul2]);
-    })));
+    }));
   });
   describe('#update(appointment)', () => {
 
-    it('should return appointment with the corresponding id and updated data', async(inject([ConsultaService], (service: ConsultaService) => {
+    it('should return appointment with the corresponding id and updated data', inject([ConsultaService], (service: ConsultaService) => {
       const paciente1 = new Paciente('Amanda', 'pardo', '04', '121', '42', 'f', 'br', '56', 'pb', 'cardio');
       const medico1 = new Medico('Vini', 'Cardio', 6, '345', 2, 4000, true);
       const consul1 = new Consulta(paciente1, medico1, '31', '8', true);
@@ -81,6 +85,6 @@ describe('ConsultaService', () => {
       //consul2.dataRetorno = consul1.dataRetorno;
       //const updated = service.update(consul2, 2);
       expect(consul1.dataConsulta).toEqual('9');
-    })));
+    }));
   });
 });

@@ -6,6 +6,8 @@ import { AppService } from '../app.service';
 import { ApiService } from '../api.service';
 import { RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Injectable()
 export class ConsultaService implements OnInit {
@@ -14,7 +16,7 @@ export class ConsultaService implements OnInit {
   // automatic incrementing of id's
 
 
-  constructor(private appService: AppService, private apiService: ApiService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private appService: AppService, private apiService: ApiService) {}
 
   ngOnInit() {
 
