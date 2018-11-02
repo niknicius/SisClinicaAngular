@@ -27,7 +27,6 @@ export class ListPacientesComponent implements OnInit {
 
     this.service.getAll().subscribe(data => {
       this.pacientes = data;});
-
   }
 
   getPacientes() {
